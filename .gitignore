@@ -3,3 +3,6 @@
 .vscode
 deployment_config.json
 build/
+docker-compose.yml
+Dockerfile.ganache
+Dockerfile.streamlit

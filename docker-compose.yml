@@ -7,6 +7,8 @@ services:
       dockerfile: Dockerfile.ganache
     ports:
       - "8545:8545"
+    env_file:   # Add this line
+      - .env
     volumes:
       - blockchain_data:/app
 
@@ -19,6 +21,8 @@ services:
       - "8501:8501"
     depends_on:
       - ganache
+    env_file:   # Add this line
+      - .env
     volumes:
       - blockchain_data:/app
 

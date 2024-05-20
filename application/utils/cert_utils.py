@@ -13,6 +13,7 @@ def generate_certificate(output_path, uid, candidate_name, course_name, org_name
     # Add institute logo and institute name
     if institute_logo_path:
         logo = Image(institute_logo_path, width=150, height=150)
+        print("IMAGE PATH FOUND")
         elements.append(logo)
 
     # Add institute name

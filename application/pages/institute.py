@@ -60,7 +60,7 @@ if selected == options[0]:
     submit = form.form_submit_button("Submit")
     if submit:
         pdf_file_path = "certificate.pdf"
-        institute_logo_path = "../assets/logo.jpg"
+        institute_logo_path = "../assets/logo.png"
         generate_certificate(pdf_file_path, uid, candidate_name, course_name, org_name, institute_logo_path)
 
         # Upload the PDF to Pinata
@@ -71,7 +71,7 @@ if selected == options[0]:
 
         # Smart Contract Call
         contract.functions.generateCertificate(certificate_id, uid, candidate_name, course_name, org_name, ipfs_hash).transact({'from': w3.eth.accounts[0]})
-        st.success(f"Certificate successfully generated with Certificate ID: {certificate_id}")
+        st.success(f"Certificate successfully generated with Certificate ID: {certificate_id}\nView Certificate at https://gateway.pinata.cloud/ipfs/{certificate_id}")
 
 else:
     form = st.form("View-Certificate")
